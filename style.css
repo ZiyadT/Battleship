@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.title{
+    font-size: 50px;
+    padding: 20px;
+}
+.screen{
+    background: linear-gradient(#f0f8ff 5%, #7fffd4 80%);
+    height: 100vh;
+    text-align: center;
+}
+.ship-board{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    padding: 7px;
+}
+.move-board{
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    padding: 7px;
+}
+.game-boards{
+    margin: auto;
+    display: inline-block;
+}
+.tile{
+    border: 1px solid #009966;
+    background: #f0f8ff;
+}
+.tile1{
+    border: 1px solid #009966;
+    background: #f0f8ff;
+}
+.tile:hover{
+    background: #009966;
+}
+.ships{
+    background: #009966;
+    opacity: 0.5;
+    height: 350px;
+    width: 350px;
+    position: absolute;
+    top: 11%;
+    left: 18%;
+}
+.ship > div{
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgb(146, 0, 0);
+    background: #004d33;
+    border-radius: 5px;
+}
+.ship{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    width: calc(35px * var(--width, 1));
+    height: calc(35px * var(--height, 1));
+}
+.destroyer{
+    position: relative;
+    left: 60%;
+}
+.submarine{
+    position: relative;
+    left: 45%;
+}
+.cruiser{
+    position: relative;
+    left: 30%;
+}
+.battleship{
+    position: relative;
+    left: 15%;
+}
+.carrier{
+    position: relative;
+}
+.draggable.dragging{
+    opacity: 0.5;
+}
