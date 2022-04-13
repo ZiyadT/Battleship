@@ -1,13 +1,16 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 .title{
-    font-size: 50px;
+    font-size: 70px;
     padding: 20px;
+    color: #a9a9a9;
+    font-family: 'Black Ops One', cursive;
 }
 .screen{
-    background: linear-gradient(#f0f8ff 5%, #7fffd4 80%);
+    background: linear-gradient(to right, #5a3f37, #2c7744);
     height: 100vh;
     text-align: center;
 }
@@ -36,32 +39,34 @@
 .tile1{
     border: 1px solid #009966;
     background: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .tile:hover{
     background: #009966;
 }
 .ships{
-    background: #009966;
+    background: #556b2f;
     opacity: 0.5;
     height: 350px;
     width: 350px;
     position: absolute;
-    top: 11%;
+    top: 17%;
     left: 18%;
 }
 .ship > div{
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border: 1px solid rgb(146, 0, 0);
     background: #004d33;
-    border-radius: 5px;
 }
 .ship{
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
-    width: calc(35px * var(--width, 1));
-    height: calc(35px * var(--height, 1));
+    width: calc(40px * var(--width, 1));
+    height: calc(40px * var(--height, 1));
 }
 .destroyer{
     position: relative;
@@ -82,6 +87,29 @@
 .carrier{
     position: relative;
 }
+.start-game{
+    font-size: 25px;
+    padding: 5px;
+    position: absolute;
+    left: 65%;
+    top: 93%;
+    background: none;
+    color: #a9a9a9;
+    border: none;
+    font-family: 'Black Ops One', cursive;
+}
+.start-game:hover{
+    color: #8b0000
+}
 .draggable.dragging{
     opacity: 0.5;
+}
+.hovering{
+    background: black;
+}
+.populated{
+    background: #004d33;
+}
+.placed{
+    display: none;
 }
