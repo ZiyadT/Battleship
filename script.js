@@ -6,6 +6,7 @@ const notification = document.querySelector('.notification')
 
 let playerTurn
 let computerMoves = []
+let winner = false
 
 let playerBoard = [
     '', '', '', '', '', '', '', '', '', '',
@@ -179,7 +180,7 @@ function playerMove(t, i){
 }
 
 function computerMove(){
-    let move = Math.round(Math.random() * 100)
+    let move = Math.round(Math.random() * 99)
     console.log(move)
     if (!computerMoves.includes(move)){
         computerMoves.push(move)
@@ -188,7 +189,7 @@ function computerMove(){
             playerBoard[move] = 'x'
         }
         else
-            boardTiles[move].classList.add('miss')
+            boardTiles[move].classList.add('miss-computer')
         
         changeMoves()
     }
@@ -212,6 +213,7 @@ function changeMoves(){
 }
 
 function announceWinner(result){
+    winner = true
     selectionTiles.forEach(function(tile, index){
         tile.removeEventListener('click', () => playerMove(tile, index))
     })

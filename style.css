@@ -47,8 +47,8 @@
     background: #e2e2e2;
 }
 .tile1{
-    border: 1px solid #000000;
-    background: #e2e2e2;
+    border: 1px solid #e2e2e2;
+    background: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -115,7 +115,7 @@
     opacity: 0.5;
 }
 .hovering{
-    background: black;
+    background: rgb(0, 73, 10);
 }
 .populated{
     background: #004d33;
@@ -128,4 +128,7 @@
 }
 .miss{
     background: black;
+}
+.miss-computer{
+    background: #e2e2e2;
 }
