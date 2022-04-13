@@ -6,11 +6,21 @@
 .title{
     font-size: 70px;
     padding: 20px;
-    color: #a9a9a9;
-    font-family: 'Black Ops One', cursive;
+    color: #e2e2e2;
+    font-family: 'Bebas Neue', cursive;
+}
+.notification{
+    position: absolute;
+    font-size: 40px;
+    top: 25%;
+    left: 65%;
+    color: #e2e2e2;
+    font-family: 'Bebas Neue', cursive;
 }
 .screen{
-    background: linear-gradient(to right, #5a3f37, #2c7744);
+    background-image: radial-gradient(circle at center center, #000000, #3f4b31);
+    background-blend-mode: multiply;
+    background-color: #9bb67a;
     height: 100vh;
     text-align: center;
 }
@@ -33,21 +43,21 @@
     display: inline-block;
 }
 .tile{
-    border: 1px solid #009966;
-    background: #f0f8ff;
+    border: 1px solid #006321;
+    background: #e2e2e2;
 }
 .tile1{
-    border: 1px solid #009966;
-    background: #f0f8ff;
+    border: 1px solid #000000;
+    background: #e2e2e2;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .tile:hover{
-    background: #009966;
+    background: #005539;
 }
 .ships{
-    background: #556b2f;
+    background: #636363;
     opacity: 0.5;
     height: 350px;
     width: 350px;
@@ -59,7 +69,7 @@
     width: 40px;
     height: 40px;
     border: 1px solid rgb(146, 0, 0);
-    background: #004d33;
+    background: #3c7c67;
 }
 .ship{
     display: flex;
@@ -94,9 +104,9 @@
     left: 65%;
     top: 93%;
     background: none;
-    color: #a9a9a9;
+    color: #e2e2e2;
     border: none;
-    font-family: 'Black Ops One', cursive;
+    font-family: 'Bebas Neue', cursive;
 }
 .start-game:hover{
     color: #8b0000
@@ -112,4 +122,10 @@
 }
 .placed{
     display: none;
+}
+.hit{
+    background: red;
+}
+.miss{
+    background: black;
 }

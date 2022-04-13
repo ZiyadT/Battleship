@@ -1,6 +1,11 @@
 const draggables = document.querySelectorAll('.draggable')
 const boardTiles = document.querySelectorAll('.tile1')
+const selectionTiles = document.querySelectorAll('.tile')
 const startBtn = document.querySelector('.start-game')
+const notification = document.querySelector('.notification')
+
+let playerTurn
+let computerMoves = []
 
 let playerBoard = [
     '', '', '', '', '', '', '', '', '', '',
@@ -146,9 +151,74 @@ function checkPlayerBoard(){
 
 function startGame(){
     if (checkPlayerBoard() != 17)
-        return
-    else
+        notification.style.color = 'red'
+    else{
+        notification.style.color = '#e2e2e2'
         setupOpponentBoard()
+        selectionTiles.forEach(function(tile, index){
+            tile.addEventListener('click', () => playerMove(tile, index))
+        })
+        playerTurn = true
+        notification.innerText = 'Your turn'
+    }    
+}
+
+function playerMove(t, i){
+    if (!playerTurn || t.classList.contains('hit') || t.classList.contains('miss')){
+        return
+    }
+    if (computerBoard[i] == 's'){
+        t.classList.add('hit')
+        computerBoard[i] = 'x'
+    }
+    else
+        t.classList.add('miss')
+    changeMoves()
+    setTimeout(computerMove, Math.random() * 3000)
+
+}
+
+function computerMove(){
+    let move = Math.round(Math.random() * 100)
+    console.log(move)
+    if (!computerMoves.includes(move)){
+        computerMoves.push(move)
+        if (playerBoard[move] == 's'){
+            boardTiles[move].classList.add('hit')
+            playerBoard[move] = 'x'
+        }
+        else
+            boardTiles[move].classList.add('miss')
+        
+        changeMoves()
+    }
+    else{
+        computerMove()
+    }
+}
+
+function changeMoves(){
+    if (!playerBoard.includes('s'))
+        announceWinner(0)
+    else if (!computerBoard.includes('s'))
+        announceWinner(1)
+    else{
+        playerTurn = !playerTurn
+        if (playerTurn)
+            notification.innerText = "Your turn"
+        else
+            notification.innerText = "Opponent's turn"
+    }
+}
+
+function announceWinner(result){
+    selectionTiles.forEach(function(tile, index){
+        tile.removeEventListener('click', () => playerMove(tile, index))
+    })
+    if (result == 0)
+        notification.innerText = "You lose"
+    else
+        notification.innerText = "You win"
 }
 
 function setupOpponentBoard(){
@@ -168,6 +238,7 @@ function setupOpponentBoard(){
             for (let i = 0; i < length; i++)
                 computerBoard[randomStartLoc + i] = 's'
         }
+        console.log(computerBoard)
     })
 }
 
@@ -184,7 +255,11 @@ function checkComputerBoard(start, direction, len){
             if (computerBoard[start + i] == 's')
                 return false
         }
-        return true
+        startString = start.toString()
+        if (startString.length == 1)
+            return start < 10 - len
+        else
+            return Number(startString[1]) < 10 - len
     }
 
 }
