@@ -29,4 +29,4 @@ Battleship is a classic strategy guessing game. It consists of two players and i
 * Notifications for when a ship is destroyed
 * An "instructions" section for first time players
 * Allow users to rotate ther ships
-* Fix bug where 
+* Fix bug where game allows player to select tiles after a winner is declared
