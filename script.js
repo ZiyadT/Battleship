@@ -181,7 +181,6 @@ function playerMove(t, i){
 
 function computerMove(){
     let move = Math.round(Math.random() * 99)
-    console.log(move)
     if (!computerMoves.includes(move)){
         computerMoves.push(move)
         if (playerBoard[move] == 's'){
