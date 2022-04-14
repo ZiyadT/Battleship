@@ -4,7 +4,7 @@ Browser based battleship clone.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Battleship is a classic strategy guessing game. It consists of two players and is played on grids with locations of ships marked on them. Players take turns guessing coordinates of these ships in an attempt to sink them. The first player to sink all of their opponent's ships wins.
 
 ### Technologies Used
 
